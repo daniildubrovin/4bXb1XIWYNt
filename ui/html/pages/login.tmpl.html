@@ -1,0 +1,83 @@
+{{define "title"}}Login{{end}}
+
+{{define "main"}}
+<div class="login-main-container">
+    <div class="login-container">
+        <div class='signIn-container {{if not .Form.IsLoginForm}} hidden {{end}}' id="signInContainer">
+            <h1>Sign In</h1>
+            <form class='login-form' action='/users/login' method='POST' novalidate>
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                {{range .Form.NonFieldErrors}}
+                    <div class='error'>{{.}}</div>
+                {{end}}
+                <div class="input-box">
+                    {{with .Form.FieldErrors.email}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+                    <div class="input-box-row">
+                        <input type='email' name='email' placeholder="Email address" required value='{{.Form.Email}}'>
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    {{with .Form.FieldErrors.password}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+                    <div class="input-box-row">
+                        <input type='password' name='password' placeholder="Password" required>
+                        <i class='bx bxs-lock-alt' ></i>
+                    </div>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <div class="register-link">
+                <p>Don`t have an account? <a id="showSignUp">Sign Up</a></p>
+            </div>
+        </div>
+        <div class="signUp-container {{if .Form.IsLoginForm}} hidden {{end}}" id="signUpContainer">
+            <form class='signup-form' action='/users/signup' method='POST' novalidate>
+                <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+                <h1>Create An Account</h1>
+                {{range .Form.NonFieldErrors}}
+                    <div class='error'>{{.}}</div>
+                {{end}}
+                <div class="input-box">
+                    {{with .Form.FieldErrors.name}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+                    <div class="input-box-row">
+                        <input type='text' name='name' placeholder="Name" required>
+                        <i class='bx bx-user'></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    {{with .Form.FieldErrors.email}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+                    <div class="input-box-row">
+                        <input type='email' name='email' placeholder="Email address" required value='{{.Form.Email}}'>
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    {{with .Form.FieldErrors.password}}
+                        <label class='error'>{{.}}</label>
+                    {{end}}
+                    <div class="input-box-row">
+                        <input type='password' name='password' placeholder="Password" required>
+                        <i class='bx bxs-lock-alt' ></i>
+                    </div>
+                </div>
+                <button type="submit" class="btn signUpbtn">Sign Up</button>
+            </form>
+            <div class="register-link">
+                <p>Already have an account? <a id="showSignIn">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{{end}}

@@ -1,0 +1,31 @@
+{{define "title"}}Home{{end}}
+
+{{define "main"}}
+    <h2>Latest days</h2>
+    {{if .Days}}
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Calories</th>
+            <th>Proteins</th>
+            <th>Fats</th>
+            <th>Carbs</th>
+            <th>Fibre</th>
+            <th>ID</th>
+        </tr>
+        {{range .Days}}
+            <tr>
+                <td><a href='/days/view/{{.ID}}'>{{.Date | justDate}}</a></td>
+                <td>{{.Calories}}</td>
+                <td>{{.Proteins}}</td>
+                <td>{{.Fats}}</td>
+                <td>{{.Carbs}}</td>
+                <td>{{.Fibre}}</td>
+                <td>#{{.ID}}</td>
+            </tr>
+        {{end}}
+    </table>
+    {{else}}
+        <p>There's nothing to see here... yet!</p>
+    {{end}}
+{{end}}

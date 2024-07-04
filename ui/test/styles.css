@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: "Ubuntu Mono", monospace;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #F1F3F6;
+    color: #34495E;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-image: -webkit-linear-gradient(left, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-image: -moz-linear-gradient(left, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-image: -ms-linear-gradient(left, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-image: linear-gradient(to right, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-size: 100% 6px;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #E4E5E7;
+    overflow: auto;
+    padding-top: 33px;
+    padding-bottom: 27px;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 a{
+    font-size: 25px;
+    color: #34495E;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+header h1 i{
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+main {
+    flex: 1 1 auto;
+ }
+
+ nav {
+
+ }
+
+ footer {
+
+ }
+
+.login-main-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-main-wrapper.active .login-form.signIn {
+    transform: translateY(-450px);
+}
+
+.login-form {
+    width: 420px;
+    background: #62cb31;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    color: #fff;
+    border-radius: 12px;
+    padding: 30px 40px;
+}
+
+.login-form h1{
+font-size: 36px;
+text-align: center;
+}
+.login-form .input-box{
+position: relative;
+width: 100%;
+height: 50px;
+
+margin: 30px 0;
+}
+.input-box input{
+width: 100%;
+height: 100%;
+background: transparent;
+border: none;
+outline: none;
+border: 2px solid rgba(255, 255, 255, .2);
+border-radius: 40px;
+font-size: 16px;
+color: #fff;
+padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder{
+color: #fff;
+}
+.input-box i{
+position: absolute;
+right: 20px;
+top: 30%;
+transform: translate(-50%);
+font-size: 20px;
+
+}
+.login-form .remember-forgot{
+display: flex;
+justify-content: space-between;
+font-size: 14.5px;
+margin: -15px 0 15px;
+}
+.remember-forgot label input{
+accent-color: #fff;
+margin-right: 3px;
+
+}
+.remember-forgot a{
+color: #fff;
+text-decoration: none;
+
+}
+.remember-forgot a:hover{
+text-decoration: underline;
+}
+.login-form .btn{
+width: 100%;
+height: 45px;
+background: #fff;
+border: none;
+outline: none;
+border-radius: 40px;
+box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+cursor: pointer;
+font-size: 16px;
+color: #333;
+font-weight: 600;
+}
+.login-form .signUp-link{
+font-size: 14.5px;
+text-align: center;
+margin: 20px 0 15px;
+
+}
+.signUp-link p a{
+color: #fff;
+text-decoration: none;
+font-weight: 600;
+}
+.signUp-link p a:hover{
+text-decoration: underline;
+}

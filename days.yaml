@@ -1,0 +1,23 @@
+url: http://calories.beaidhacc.com/
+
+get all days: GET days/all
+    response: [day.json]
+
+get day by date: GET days/{date}
+    response: day.json
+
+add new day: POST days/add
+    body: day.json
+    response: day.json
+
+edit day: PUT days/{date}
+    body: day.json
+    response: day.json
+    comments: Если хочешь изменить день в ручную, хотя в таком случае общие кбжу дня
+    и сумма кбжу всех продуктов за день будут не совпадать
+
+delete day: DELETE days/{date}
+    response: day.json
+
+get excel table: GET days/excel/
+    response: day.xsls

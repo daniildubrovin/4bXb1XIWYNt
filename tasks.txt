@@ -1,0 +1,6 @@
+1. home : 
+    - days
+        list-table, load 10 and after scrolling down load others
+        element - row table + input + minus/plus button
+    - products
+        

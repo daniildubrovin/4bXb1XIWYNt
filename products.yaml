@@ -1,0 +1,64 @@
+url: http://calories.beaidhacc.com/
+
+#манипуляции с продуктами из общего списка продуктов
+
+get all products: GET products/
+  response: [product.json]
+
+get product by name: GET products/{name}
+  response: product.json
+
+edit product: PUT products/{name}
+  body: product.json
+  response: product.json
+
+add product: POST products/
+  body: product.json
+  response: product.json
+
+delete product: DELETE products/{name}
+  response: product.json
+
+#манипуляции с продуктами из дневного списка
+
+get all products from day list: GET products/day/{date}
+  response: [day_product.json]
+
+get product from day list: GET products/day/{id}
+  response: day_product.json
+
+add new product: POST products/day/{date}?new=true
+  body: day_product.json
+  response: day_product.json
+  comments: Если это новый продукт, то он сохраняется в общей таблице
+  продуктов. Добавленный продукт сохраняется в списке продуктов сегодняшнего
+  дня. 
+
+edit day product: PUT products/day/{id}
+  body: day_product.json
+  response: day_product.json
+  comments: Изменение граммов у продукта из списка текущего дня
+
+delete product from day list: DELETE products/day/{id}
+  response: day_product.json
+  comments: Удаление продукта из списка текущего дня
+
+#манипуляции с дневным списком продуктов
+
+get products from saving list: GET products/list/{name}
+  response: product_list.json
+  comments: Получить сохраненный список продуктов
+
+save products list: POST products/list/
+  body: product_list.json
+  response: product_list.json
+  comments: Сохранить список продуктов
+
+edit products list: PUT products/list/{name}
+  body: product_list.json
+  response: product_list.json
+  comments: Изменить сохраненный список продуктов
+
+delete products list: DELETE products/list/{name}
+  response: product_list.json
+  comments: Удалить сохраненный список продуктов

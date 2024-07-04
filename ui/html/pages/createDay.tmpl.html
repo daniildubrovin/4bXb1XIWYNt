@@ -1,0 +1,51 @@
+{{define "title"}}Create a New User{{end}}
+{{define "main"}}
+<form action='/days/create' method='POST'>
+    <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+    <div>
+        <label>Calories:</label>
+        {{with .Form.FieldErrors.calories}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='number' name='calories' value='{{.Form.Calories}}'>
+    </div>
+    <div>
+        <label>Proteins:</label>
+        {{with .Form.FieldErrors.proteins}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='number' name='proteins' value='{{.Form.Proteins}}'>
+    </div>
+    <div>
+        <label>Fats:</label>
+        {{with .Form.FieldErrors.fats}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='number' name='fats' value='{{.Form.Fats}}'>
+    </div>
+    <div>
+        <label>Carbs:</label>
+        {{with .Form.FieldErrors.carbs}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='number' name='carbs' value='{{.Form.Carbs}}'>
+    </div>
+    <div>
+        <label>Fibre:</label>
+        {{with .Form.FieldErrors.fibre}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='number' name='fibre' value='{{.Form.Fibre}}'>
+    </div>
+    <div>
+        <label>Date:</label>
+        {{with .Form.FieldErrors.date}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='date' name='date' value='{{.Form.Date}}'>
+    </div>
+    <div>
+        <input type='submit' value='Publish day'>
+    </div>
+</form>
+{{end}}

@@ -1,0 +1,13 @@
+{{define "title"}}Day #{{.Day.ID}}{{end}}
+
+{{define "main"}}
+    {{with .Day}}
+    <div class='snippet'>
+        <div class='metadata'>
+            <strong><time>Date: {{.Date | justDate}}</time></strong>
+            <span>#{{.ID}}</span>
+        </div>
+        <pre><code>{{.Calories}}</code></pre>
+    </div>
+    {{end}}
+{{end}}
